@@ -184,59 +184,42 @@
 
     <!-- JS -->
     <script>
+        function animateFrog(targets, properties) {
+            gsap.to(targets, {
+                ...properties,
+                duration: 0.3,
+                repeat: -1,
+                repeatDelay: 1.2,
+                transformOrigin: "center center",
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+        }
+
         /* EYES */
-        gsap.to('#eye-left, #eye-right', {
+        animateFrog('#eye-left, #eye-right', {
             scaleY: 0.5,
-            duration: 0.3,
-            repeat: -1,
-            repeatDelay: 2,
-            transformOrigin: "center center",
-            yoyo: true,
-            ease: "sine.inOut"
         });
 
         /* SMILE */
-        gsap.to('#smile', {
+        animateFrog('#smile', {
             scaleX: 1.2,
-            duration: 0.3,
-            repeat: -1,
-            repeatDelay: 2,
-            transformOrigin: "center center",
-            yoyo: true,
-            ease: "sine.inOut"
         });
 
         /* CHEEKS */
-        gsap.to('#cheeks', {
+        animateFrog('#cheeks', {
             filter: "blur(5px)",
-            duration: 0.3,
-            repeat: -1,
-            repeatDelay: 2,
-            yoyo: true,
-            ease: "sine.inOut"
         });
 
         /* KNIFE */
-        gsap.to('#knife, #knife0', {
+        animateFrog('#knife, #knife0', {
             opacity: 1,
             rotation: 20,
-            duration: 0.3,
-            transformOrigin: "center center",
-            repeat: -1,
-            repeatDelay: 2,
-            yoyo: true,
-            ease: "sine.inOut"
         });
 
         /* LEFT HAND */
-        gsap.to('#hand-left', {
+        animateFrog('#hand-left', {
             rotation: 40,
-            duration: 0.3,
-            transformOrigin: "center center",
-            repeat: -1,
-            repeatDelay: 2,
-            yoyo: true,
-            ease: "sine.inOut"
         });
 
         /* BACKGROUND ELEMENTS */
@@ -250,18 +233,18 @@
             ease: "sine.inOut"
         });
 
-        gsap.fromTo('#cloud-left, #cloud-right', 
-        {
-            scale: 0.8,
-            transformOrigin: "center center",
-        },
-        {
-            scale: 1.5,
-            duration: 4,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
-        });
+        gsap.fromTo('#cloud-left, #cloud-right',
+            {
+                scale: 0.8,
+                transformOrigin: "center center",
+            },
+            {
+                scale: 1.5,
+                duration: 4,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
 
         /* TEXT */
         gsap.to('.st0', {
