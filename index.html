@@ -17,18 +17,19 @@
             height: 100vh;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
 
             svg {
-                transform: scale(2);
-                transition: transform 0.3s ease-in-out;
+                width: 300px;
+                height: auto;
+                transform: scale(1.5);
             }
         }
     </style>
 </head>
 
 <body>
-    <svg version="1.1" id="mySVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-        y="0px" width="300px" height="300px" viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;"
+    <svg version="1.1" id="mySVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;"
         xml:space="preserve">
         <style type="text/css">
             .st0 {
@@ -205,7 +206,7 @@
         const mySVG = document.querySelector('#mySVG');
 
         mySVG.addEventListener('mouseenter', () => {
-            gsap.to(mySVG, { scale: 2.7, duration: 0.05 });
+            gsap.to(mySVG, { scale: 2, duration: 0.4 });
             animateFrog("#eye-left, #eye-right", { scaleY: 0.5 });
             animateFrog("#smile", { scaleX: 1.2 });
             animateFrog("#cheeks", { filter: "blur(5px)" });
@@ -214,7 +215,7 @@
         });
 
         mySVG.addEventListener('mouseleave', () => {
-            gsap.to(mySVG, { scale: 2, duration: 0.05 });
+            gsap.to(mySVG, { scale: 1.5, duration: 0.4 });
             gsap.to("#eye-left, #eye-right", { scaleY: 1, duration: 0.5 });
             gsap.to("#smile", { scaleX: 1, duration: 0.5 });
             gsap.to("#cheeks", { filter: "blur(0px)", duration: 0.5 });
